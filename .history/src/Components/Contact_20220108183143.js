@@ -7,6 +7,12 @@ const Contact = ({ data }) => {
   const [message, setMessage] = useState("");
 
   if (data) {
+    var contactName = data.name;
+    var street = data.address.street;
+    var city = data.address.city;
+    var state = data.address.state;
+    var zip = data.address.zip;
+    var phone = data.phone;
     var contactEmail = data.email;
     var contactMessage = data.contactmessage;
   }
@@ -29,14 +35,14 @@ const Contact = ({ data }) => {
           <path d="M500,2l500,98l-1000,0l500,-98Z"></path>
           </svg>
           </div>
-      <div className="row section-head centered">
+      <div className="row section-head">
         <div className="two columns header-col">
           <h1>
             <span>Get In Touch.</span>
           </h1>
         </div>
 
-        <div className="eight columns centered">
+        <div className="ten columns">
           <p className="lead">{contactMessage}</p>
         </div>
       </div>
@@ -116,6 +122,23 @@ const Contact = ({ data }) => {
             <br />
           </div>
         </div>
+
+        {/*<aside className="four columns footer-widgets">
+          <div className="widget widget_contact">
+            <h4>Address and Phone</h4>
+            <p className="address">
+              {contactName}
+              <br />
+              {contactEmail}
+              <br />
+              <br />
+              {street} <br />
+              {city}, {state} {zip}
+              <br />
+              <span>{phone}</span>
+            </p>
+          </div>
+  </aside>*/}
       </div>
     </section>
   );

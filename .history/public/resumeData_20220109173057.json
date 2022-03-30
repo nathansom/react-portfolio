@@ -1,15 +1,14 @@
 {
   "main": {
     "name": "Nathan Somsa-ard",
-    "occupation": "Full-Stack Web Developer and Digital Strategist",
+    "occupation": "Frontend Web Developer and Digital Strategist",
     "description": "I love semantic, clean code and I want to share this love with you.",
     "image": "profilepic.webp",
-    "bio": "Hello! I am Nathan. I am a self-taught web developer as well as a certified digital marketing professional. I have passions for speed optimization, SEO, web accessibility standards, and mininalistic design. I founded my own digital agency in 2020, named Adcuro Digital, to help local businesses adapt to the digital-first climate. My focus has been WordPress development so far but I am thrilled to begin a JAMstack project that takes the goodness of WordPress to the modern realm of web development",
+    "bio": "Hello! I am Nathan. I am a certified digital marketing professional as well as a self-taught web developer and WordPress developer. I have passions for speed optimization, SEO, web accessibility standards, and mininalistic design. I founded my own digital agency in 2020, named Adcuro Digital, to help local businesses adapt to the digital-first climate. My focus has been WordPress development so far but I am thrilled to begin a JAMstack project that takes the goodness of WordPress to the modern realm of web development",
     "contactmessage": "Have a project idea in mind? Get in touch with me!",
     "email": "nathan.adcurodigital@gmail.com",
-    "city":"Vancouver",
     "website": "https://www.adcurodigital.com/",
-    "resumedownload": "https://drive.google.com/file/d/1Ls19QXJNVSoxXH8diYYAMbWmXNzSd0QU/view?usp=sharing",
+    "resumedownload": "https://drive.google.com/file/d/19S_4CmqDCV-zbBCiXYKHg6PbCO9egu7T/view?usp=sharing",
     "social": [
       {
         "name": "youtube",
@@ -28,7 +27,7 @@
       },
       {
         "name": "instagram",
-        "url": "http://instagram.com/nathan.tsx/",
+        "url": "http://instagram.com/nathan.jsx/",
         "className": "fa fa-instagram"
       },
       {
@@ -69,7 +68,7 @@
       },
       {
         "name": "WordPress Development",
-        "level": "95%"
+        "level": "90%"
       },
       {
         "name": "HTML",
@@ -89,7 +88,7 @@
       },
       {
         "name": "Python",
-        "level": "80%"
+        "level": "70%"
       },
       {
         "name": "Java",
@@ -104,24 +103,6 @@
   "portfolio": {
     "projects": [
       {
-        "title": "Longitude Immigration Website",
-        "category": "",
-        "image": "lgtimmigration.webp",
-        "url": "https://lgtimmigration.ca"
-      },
-      {
-        "title": "Willow Tree Wellness Landing Website",
-        "category": "",
-        "image": "willowtreermt.webp",
-        "url": "https://willowtreewellnessrmt.ca"
-      },
-      {
-        "title": "Amazon Clone",
-        "category": "",
-        "image": "amazonclone.webp",
-        "url": "https://amazon-clone-nextjs-ns.vercel.app/"
-      },
-      {
         "title": "The Little Red Radio Promotional Landing Page",
         "category": "",
         "image": "littleredradio.webp",
@@ -132,8 +113,13 @@
         "category": "",
         "image": "coathangerbook.webp",
         "url": "https://www.thecoathangerbook.com/"
+      },
+      {
+        "title": "Willow Tree Wellness Landing Website",
+        "category": "",
+        "image": "willowtreermt.webp",
+        "url": "https://willowtreewellnessrmt.ca"
       }
-      
     ]
   },
   "testimonials": {

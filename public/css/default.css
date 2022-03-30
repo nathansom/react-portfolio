@@ -464,7 +464,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
    font: 16px/30px 'opensans-bold', sans-serif;
-   background: #11ABB0;
+   background: #17b6dd;
    display: inline-block;
 	text-decoration: none;
    letter-spacing: 0;
@@ -636,7 +636,11 @@ input[type="checkbox"] { display: inline; }
 /* column widths */
 .row .one         { width: 8.33333%; }
 .row .two         { width: 16.66667%; }
-.row .three       { width: 25%; }
+.row .three       { 
+   width: 25%; padding-top: 20px; display: flex;
+   align-content: center;
+   justify-content: center;
+   align-items: center; }
 .row .four        { width: 33.33333%; }
 .row .five        { width: 41.66667%; }
 .row .six         { width: 50%; }
@@ -687,7 +691,7 @@ input[type="checkbox"] { display: inline; }
 /* block grids
 --------------------------------------------------------------------- */
 .bgrid-sixths [class*="column"]   { width: 16.66667%; }
-.bgrid-quarters [class*="column"] { width: 25%; }
+.bgrid-quarters [class*="column"] { width: 33%; }
 .bgrid-thirds [class*="column"]   { width: 33.33333%; }
 .bgrid-halves [class*="column"]   { width: 50%; }
 

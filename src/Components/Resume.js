@@ -40,6 +40,16 @@ const Resume = ({ data }) => {
 
   return (
     <section id="resume">
+      <div className="divider-top">
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="#2B2B2B"
+      preserveAspectRatio="none"
+      viewBox="0 0 1000 100"
+    >
+      <path d="M1000 0L0 100h1000V0z"></path>
+    </svg>
+      </div>
       <div className="row education">
         <div className="three columns header-col">
           <h1>
@@ -78,6 +88,12 @@ const Resume = ({ data }) => {
             <ul className="skills">{skills}</ul>
           </div>
         </div>
+      </div>
+      <div className="divider-bottom"> 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#2B2B2B" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path d="M1000,0l-500,98l-500,-98l0,100l1000,0l0,-100Z" className="opacity-04"></path>
+        <path d="M1000,20l-500,78l-500,-78l0,80l1000,0l0,-80Z"></path>
+      </svg>
       </div>
     </section>
   );
