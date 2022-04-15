@@ -23,9 +23,9 @@ const Contact = ({ data }) => {
 
   return (
     <section id="contact">
-         <div class="divider-top">
+         <div className="divider-top">
         <svg xmlns="http://www.w3.org/2000/svg" fill="#2B2B2B" viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M500,2l500,78l0,20l-1000,0l0,-20l500,-78Z" class="opacity-04"></path>
+          <path d="M500,2l500,78l0,20l-1000,0l0,-20l500,-78Z" className="opacity-04"></path>
           <path d="M500,2l500,98l-1000,0l500,-98Z"></path>
           </svg>
           </div>
@@ -51,7 +51,6 @@ const Contact = ({ data }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue=""
                   value={name}
                   size="35"
                   id="contactName"
@@ -66,7 +65,6 @@ const Contact = ({ data }) => {
                 </label>
                 <input
                   type="text"
-                  defaultValue=""
                   value={email}
                   size="35"
                   id="contactEmail"
@@ -79,7 +77,6 @@ const Contact = ({ data }) => {
                 <label htmlFor="contactSubject">Subject</label>
                 <input
                   type="text"
-                  defaultValue=""
                   value={subject}
                   size="35"
                   id="contactSubject"
