@@ -12,7 +12,7 @@ describe('App', () => {
         expect(screen.getAllByText(/skill/i)[0]).toBeInTheDocument();
         expect(screen.getAllByText(/contact/i)[0]).toBeInTheDocument();
         expect(screen.getAllByText(/work/i)[0]).toBeInTheDocument();
-        
+
         expect(screen.getByRole('navigation')).toBeInTheDocument();
     })
 })
