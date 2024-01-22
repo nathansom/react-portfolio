@@ -43,7 +43,7 @@ const Contact = ({ data }) => {
 
       <div className="row">
         <div className="eight columns centered">
-          <form onSubmit={submitForm} method="post" action="mailto:nathan.adcurodigital.com">
+          <form>
             <fieldset>
               <div>
                 <label htmlFor="contactName">
