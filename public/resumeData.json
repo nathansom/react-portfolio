@@ -1,35 +1,20 @@
 {
   "main": {
     "name": "Nathan Somsa-ard",
-    "occupation": "Full-Stack Web Developer and Digital Strategist",
-    "description": "I love semantic, clean code and I want to share this love with you.",
+    "occupation": "Full-Stack Software Developer and Power Platform Developer and Consultant",
+    "description": "I love semantic, testable and clean code and I want to share this love with you.",
     "image": "profilepic.webp",
-    "bio": "Hello! I am Nathan. I am a self-taught web developer as well as a certified digital marketing professional. I have passions for speed optimization, SEO, web accessibility standards, and mininalistic design. I founded my own digital agency in 2020, named Adcuro Digital, to help local businesses adapt to the digital-first climate. My focus has been WordPress development so far but I am thrilled to begin a JAMstack project that takes the goodness of WordPress to the modern realm of web development",
+    "bio": "Hello! I am Nathan. I am a self-taught software developer passionate in building delightful web applications that transform business. I founded my own digital agency in 2020, named Adcuro Digital, to help local businesses adapt to the digital-first climate. My focus back then was WordPress development and integration with popular CRM. Now, I am working full-time as Power Platform developer and is enjoying developing solutions on this heavy-duty ERP/CRM platform.",
     "contactmessage": "Have a project idea in mind? Get in touch with me!",
     "email": "nathan.adcurodigital@gmail.com",
-    "city":"Vancouver",
-    "website": "https://www.adcurodigital.com/",
-    "resumedownload": "https://drive.google.com/file/d/1AK13LfGK3td2x1fVH_K3FFMvqeR25b0A/view?usp=sharing",
+    "city":"Victoria",
+    "website": "https://www.nathancodes.dev/",
+    "resumedownload": "https://drive.google.com/file/d/1DvRUwvaYTNNCkaXCZOqQLGl7z10t5ayw/view?usp=sharing",
     "social": [
-      {
-        "name": "youtube",
-        "url": "https://www.youtube.com/channel/UCeacpxnEsuPmG-9ZlVnDlgg",
-        "className": "fa fa-youtube"
-      },
-      {
-        "name": "facebook",
-        "url": "https://www.facebook.com/adcurodigital",
-        "className": "fa fa-facebook"
-      },
       {
         "name": "linkedin",
         "url": "https://www.linkedin.com/in/nsomsaard/",
         "className": "fa fa-linkedin"
-      },
-      {
-        "name": "instagram",
-        "url": "http://instagram.com/nathan.tsx/",
-        "className": "fa fa-instagram"
       },
       {
         "name": "github",
@@ -42,10 +27,10 @@
     "skillmessage": "Programming Language Proficiency",
     "education": [
       {
-        "school": "Digital Marketing Institute - DMI",
-        "degree": "Professional Diploma in Digital Marketing",
-        "graduated": "February 2021",
-        "description": "Graduated with 85% on the exam"
+        "school": "University of British Columbia - Canada",
+        "degree": "Bachelor's Degree, Food, Nutrition, and Health",
+        "graduated": "May 2022",
+        "description": "Graduated with experience developing nutritional information database for a private business"
       },
       {
         "school": "University of Victoria - Canada",
@@ -56,27 +41,29 @@
     ],
     "work": [
       {
+        "company": "HCLTech",
+        "title": "Software Developer",
+        "years": "August 2022 - Present",
+        "description": "Helped my team pioneer the development of a bespoke build system for pro-dev Power Platform development that emphasizes source control as the single source of truth. I also served as code reviewers and helped others get better at React.js and TypeScript."
+      },
+      {
         "company": "Adcuro Digital",
         "title": "Founder and Lead Developer and Strategist",
-        "years": "August 2020 - Present",
+        "years": "August 2020 - August 2022",
         "description": "Built performant websites for local businesses and educated business owners about digital strategy and WordPress best practices"
       }
     ],
     "skills": [
       {
-        "name": "Web Development",
+        "name": "HTML5",
         "level": "100%"
       },
       {
-        "name": "WordPress Development",
-        "level": "95%"
-      },
-      {
-        "name": "HTML",
+        "name": "CSS3",
         "level": "100%"
       },
       {
-        "name": "CSS",
+        "name": "TypeScript",
         "level": "100%"
       },
       {
@@ -84,16 +71,40 @@
         "level": "100%"
       },
       {
-        "name": "ReactJs",
+        "name": "ReactJS",
         "level": "100%"
+      },
+      {
+        "name": "NodeJS",
+        "level": "100%"
+      },
+      {
+        "name": "C#",
+        "level": "100%"
+      },
+      {
+        "name": "ASP.NET",
+        "level": "100%"
+      },
+      {
+        "name": ".NET Core",
+        "level": "100%"
+      },
+      {
+        "name": ".NET Framework",
+        "level": "100%"
+      },
+      {
+        "name": "Power Platform Development",
+        "level": "100%"
+      },
+      {
+        "name": "WordPress Development",
+        "level": "90%"
       },
       {
         "name": "Python",
         "level": "80%"
-      },
-      {
-        "name": "Java",
-        "level": "70%"
       },
       {
         "name": "Git",
@@ -114,24 +125,6 @@
         "category": "",
         "image": "willowtreermt.webp",
         "url": "https://willowtreewellnessrmt.ca"
-      },
-      {
-        "title": "Amazon Clone",
-        "category": "",
-        "image": "amazonclone.webp",
-        "url": "https://amazon-clone-nextjs-ns.vercel.app/"
-      },
-      {
-        "title": "The Little Red Radio Promotional Landing Page",
-        "category": "",
-        "image": "littleredradio.webp",
-        "url": "https://adcurodigital.groovepages.com/thelittleredradio/"
-      },
-      {
-        "title": "The Coat Hanger Book Website",
-        "category": "",
-        "image": "coathangerbook.webp",
-        "url": "https://www.thecoathangerbook.com/"
       }
       
     ]
