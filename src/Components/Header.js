@@ -1,7 +1,8 @@
+import { useContext, useEffect } from "react";
 import TypeWriter from "react-typewriter";
+
 import Nav from "./Nav";
 import { IOContext } from "../context/IOContextProvider";
-import { useContext, useEffect } from "react";
 
 const Header = ({ data }) => {
   const name = data?.name,
