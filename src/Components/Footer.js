@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Footer = ({ data }) => {
   const networks = data?.social?.map(function (network) {
       return (

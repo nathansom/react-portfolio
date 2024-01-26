@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 
 const ioReducer = (prevState, action) => {
   const { type, sectionId, intersectionRatio } = action;

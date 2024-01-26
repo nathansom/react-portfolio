@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import TypeWriter from "react-typewriter";
 
 import Nav from "./Nav";
