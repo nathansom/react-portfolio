@@ -6,6 +6,6 @@ import { Header } from "./Header";
 
 describe("Header", () => {
   test("Render Header component", () => {
-    render(<Header />);
+    render(<Header data={{}} />);
   });
 });

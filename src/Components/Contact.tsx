@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import { IOContext } from "../context/IOContextProvider";
 
-export const Contact = ({ data }) => {
+export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
     [email, setEmail] = useState(""),
     [subject, setSubject] = useState(""),
@@ -11,7 +12,10 @@ export const Contact = ({ data }) => {
     observer = useContext(IOContext);
 
   useEffect(() => {
-    observer.observe(document.getElementById("contact"));
+    const section = document.getElementById("contact");
+
+    if (observer && observer instanceof IntersectionObserver && section)
+      observer.observe(section);
   }, []);
 
   const submitForm = () => {
@@ -63,7 +67,7 @@ export const Contact = ({ data }) => {
                 <input
                   type="text"
                   value={name}
-                  size="35"
+                  size={35}
                   id="contactName"
                   name="contactName"
                   onChange={(e) => setName(e.target.value)}
@@ -77,7 +81,7 @@ export const Contact = ({ data }) => {
                 <input
                   type="text"
                   value={email}
-                  size="35"
+                  size={35}
                   id="contactEmail"
                   name="contactEmail"
                   onChange={(e) => setEmail(e.target.value)}
@@ -89,7 +93,7 @@ export const Contact = ({ data }) => {
                 <input
                   type="text"
                   value={subject}
-                  size="35"
+                  size={35}
                   id="contactSubject"
                   name="contactSubject"
                   onChange={(e) => setSubject(e.target.value)}
@@ -101,8 +105,8 @@ export const Contact = ({ data }) => {
                   Message <span className="required">*</span>
                 </label>
                 <textarea
-                  cols="50"
-                  rows="15"
+                  cols={50}
+                  rows={15}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   id="contactMessage"

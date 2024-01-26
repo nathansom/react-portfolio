@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -11,8 +11,10 @@ import Portfolio from "./Components/Portfolio";
 import "./App.css";
 import { IOContextProvider } from "./context/IOContextProvider";
 
-const App = () => {
-  const [resumeData, setResumeData] = useState({});
+export const App = () => {
+  const [resumeData, setResumeData] = useState<
+    Record<string, any> | undefined
+  >();
 
   useEffect(() => {
     (async () => {
@@ -22,6 +24,8 @@ const App = () => {
       setResumeData(data);
     })();
   }, []);
+
+  if (!resumeData) return null;
 
   return (
     <IOContextProvider>

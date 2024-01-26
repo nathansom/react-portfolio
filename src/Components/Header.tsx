@@ -1,15 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import TypeWriter from "react-typewriter";
 
-import Nav from "./Nav";
+import { Nav } from "./Nav";
 import { IOContext } from "../context/IOContextProvider";
 
-export const Header = ({ data }) => {
+export const Header = ({ data }: any) => {
   const name = data?.name,
     occupation = data?.occupation,
     description = data?.description,
     city = data?.city,
-    networks = data?.social?.map(function (network) {
+    networks = data?.social?.map((network: Record<string, string>) => {
       return (
         <li key={network.name}>
           <a href={network.url}>
@@ -21,7 +21,9 @@ export const Header = ({ data }) => {
     observer = useContext(IOContext);
 
   useEffect(() => {
-    observer.observe(document.getElementById("home"));
+    const section = document.getElementById("home");
+    if (observer && observer instanceof IntersectionObserver && section)
+      observer.observe(section);
   }, []);
 
   return (
@@ -30,9 +32,16 @@ export const Header = ({ data }) => {
 
       <div className="row banner">
         <div className="banner-text">
-          <h1 className="responsive-headline">
-            {name && <TypeWriter typing={1}>{`Hi! I'm ${name}.`}</TypeWriter>}
-          </h1>
+          {name && (
+            <h1 className="responsive-headline">
+              {/* <TypeWriter
+              fixed={true}
+              typing={1}
+            >{`Hi! I'm ${name}.`}</TypeWriter> */}
+
+              {`Hi! I'm ${name}.`}
+            </h1>
+          )}
           {city && occupation && description && (
             <h3>
               Based in {city}. <span>{occupation}</span>. {description}.

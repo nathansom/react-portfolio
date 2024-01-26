@@ -6,6 +6,6 @@ import { Portfolio } from "./Portfolio";
 
 describe("Portfolio", () => {
   test("Render portfolio component", () => {
-    render(<Portfolio />);
+    render(<Portfolio data={{}} />);
   });
 });

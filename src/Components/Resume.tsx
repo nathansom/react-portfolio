@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
+
 import { IOContext } from "../context/IOContextProvider";
 
 export const Resume = ({ data }) => {
@@ -40,7 +41,12 @@ export const Resume = ({ data }) => {
     observer = useContext(IOContext);
 
   useEffect(() => {
-    observer.observe(document.getElementById("resume"));
+    const section = document.getElementById("resume");;
+
+    if (observer && section)
+      (observer as IntersectionObserver).observe(
+        section
+      );
   }, []);
 
   return (

@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
+
 import { IOContext } from "../context/IOContextProvider";
 
-export const Testimonials = ({ data }) => {
-  const testimonials = data?.testimonials?.map((testimonials) => {
+export const Testimonials = ({ data }: any) => {
+  const testimonials = data?.testimonials?.map((testimonials: Record<string, string>) => {
       return (
         <li key={testimonials.user}>
           <blockquote>
@@ -15,7 +16,9 @@ export const Testimonials = ({ data }) => {
     observer = useContext(IOContext);
 
   useEffect(() => {
-    observer.observe(document.getElementById("testimonials"));
+    const section = document.getElementById("testimonials");
+    if (observer && section)
+      (observer as IntersectionObserver).observe(section);
   }, []);
 
   return (

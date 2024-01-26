@@ -1,7 +1,7 @@
 import React from "react";
 
-export const Footer = ({ data }) => {
-  const networks = data?.social?.map(function (network) {
+export const Footer = ({ data }: any) => {
+  const networks = data?.social?.map((network: Record<string,string>) => {
       return (
         <li key={network.name}>
           <a href={network.url}>

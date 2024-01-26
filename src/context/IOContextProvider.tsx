@@ -1,6 +1,6 @@
-import React, { createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
-const ioReducer = (prevState, action) => {
+const ioReducer = (prevState: any, action: any) => {
   const { type, sectionId, intersectionRatio } = action;
 
   if (type === "set_current_section")
@@ -15,35 +15,38 @@ const ioReducer = (prevState, action) => {
   return prevState
 };
 
-export const IOContext = createContext(null);
+export const IOContext = createContext({});
 
 export const InViewSectionContext = createContext("");
 
-export const IOContextProvider = ({ children }) => {
+export const IOContextProvider = ({ children }: { children: JSX.Element }) => {
   const [state, dispatch] = useReducer(ioReducer, {
       currentSectionId: "home",
       prevIntersectRatio: 0,
     }),
     { currentSectionId, prevIntersectRatio } = state,
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((el) => {
-        if (el.intersectionRatio > 0) {
-          dispatch({
-            type: "set_current_section",
-            sectionId: el.target.id,
-          });
-        }
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((el) => {
+          if (el.intersectionRatio > 0) {
+            dispatch({
+              type: "set_current_section",
+              sectionId: el.target.id,
+            });
+          }
 
-        dispatch({
-          type: "set_prev_intersect_ratio",
-          prevIntersectRatio: el.intersectionRatio,
+          dispatch({
+            type: "set_prev_intersect_ratio",
+            prevIntersectRatio: el.intersectionRatio,
+          });
         });
-      });
-    }, {
-  root: null,
-  rootMargin: "0px",
-  threshold: 1.0,
-});
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0,
+      }
+    );
 
   return (
     <IOContext.Provider value={observer}>
