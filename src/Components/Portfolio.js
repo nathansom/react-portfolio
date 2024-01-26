@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { IOContext } from "../context/IOContextProvider";
 
-const Portfolio = ({ data }) => {
+export const Portfolio = ({ data }) => {
   const projects = data?.projects?.map((projects) => {
     const projectImage = "images/portfolio/" + projects.image;
 

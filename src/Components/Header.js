@@ -4,7 +4,7 @@ import TypeWriter from "react-typewriter";
 import Nav from "./Nav";
 import { IOContext } from "../context/IOContextProvider";
 
-const Header = ({ data }) => {
+export const Header = ({ data }) => {
   const name = data?.name,
     occupation = data?.occupation,
     description = data?.description,

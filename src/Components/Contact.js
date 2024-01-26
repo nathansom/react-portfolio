@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { IOContext } from "../context/IOContextProvider";
 
-const Contact = ({ data }) => {
+export const Contact = ({ data }) => {
   const [name, setName] = useState(""),
     [email, setEmail] = useState(""),
     [subject, setSubject] = useState(""),

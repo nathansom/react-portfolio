@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { IOContext } from "../context/IOContextProvider";
 
-const Testimonials = ({ data }) => {
+export const Testimonials = ({ data }) => {
   const testimonials = data?.testimonials?.map((testimonials) => {
       return (
         <li key={testimonials.user}>

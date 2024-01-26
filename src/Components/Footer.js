@@ -1,4 +1,4 @@
-const Footer = ({ data }) => {
+export const Footer = ({ data }) => {
   const networks = data?.social?.map(function (network) {
       return (
         <li key={network.name}>

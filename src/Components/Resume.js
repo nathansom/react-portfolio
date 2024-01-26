@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { IOContext } from "../context/IOContextProvider";
 
-const Resume = ({ data }) => {
+export const Resume = ({ data }) => {
   const skillmessage = data?.skillmessage,
     education = data?.education?.map((education) => {
       return (

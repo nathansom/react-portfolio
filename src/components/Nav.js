@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 
 import { InViewSectionContext } from "../context/IOContextProvider";
 
-const Nav = () => {
+export const Nav = () => {
   const scrollY = useRef(0),
     navWrapRef = useRef(null),
     homeRef = useRef(null),
