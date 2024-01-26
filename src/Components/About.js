@@ -1,6 +1,13 @@
-import React from "react";
+import { useContext, useEffect } from "react";
+import { IOContext } from "../context/IOContextProvider";
 
-const About = ({ data }) => {
+export const About = ({ data }) => {
+  const observer = useContext(IOContext);
+
+  useEffect(() => {
+    observer.observe(document.getElementById("about"));
+  }, []);
+
   if (data) {
     var profilepic = "images/" + data.image;
     var bio = data.bio;
@@ -24,7 +31,12 @@ const About = ({ data }) => {
           <div className="row">
             <div className="columns download">
               <p>
-                <a href={resumeDownload} target="_blank" rel="noreferrer" className="button">
+                <a
+                  href={resumeDownload}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button"
+                >
                   <i className="fa fa-download"></i>Download Resume
                 </a>
               </p>

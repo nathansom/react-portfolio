@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { IOContext } from "../context/IOContextProvider";
 
 const Contact = ({ data }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState(""),
+    [email, setEmail] = useState(""),
+    [subject, setSubject] = useState(""),
+    [message, setMessage] = useState(""),
+    contactEmail = data?.email || "",
+    contactMessage = data?.contactmessage || "",
+    observer = useContext(IOContext);
 
-  if (data) {
-    var contactEmail = data.email;
-    var contactMessage = data.contactmessage;
-  }
+  useEffect(() => {
+    observer.observe(document.getElementById("contact"));
+  }, []);
 
   const submitForm = () => {
     window.open(
@@ -23,12 +26,20 @@ const Contact = ({ data }) => {
 
   return (
     <section id="contact">
-         <div className="divider-top">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#2B2B2B" viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path d="M500,2l500,78l0,20l-1000,0l0,-20l500,-78Z" className="opacity-04"></path>
+      <div className="divider-top">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#2B2B2B"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M500,2l500,78l0,20l-1000,0l0,-20l500,-78Z"
+            className="opacity-04"
+          ></path>
           <path d="M500,2l500,98l-1000,0l500,-98Z"></path>
-          </svg>
-          </div>
+        </svg>
+      </div>
       <div className="row section-head centered">
         <div className="two columns header-col">
           <h1>

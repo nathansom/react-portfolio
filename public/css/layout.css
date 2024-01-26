@@ -215,7 +215,7 @@ ul#nav li a:hover {
    transition-timing-function: ease-in-out;
 }
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #1b8deb; }
+/* ul#nav li.current a { color: #1b8deb; } */
 
 
 /* ------------------------------------------------------------------ */
@@ -852,7 +852,7 @@ call-to-action .button {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
 }
 .flex-control-paging li a {
     width: 12px;

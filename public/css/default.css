@@ -56,6 +56,7 @@ time, mark, audio, video {
    font-size: 100%;
    vertical-align: baseline;
    background: transparent;
+   scroll-behavior: smooth;
 }
 
 article,aside,details,figcaption,figure,
@@ -87,7 +88,7 @@ pre {
    word-wrap: break-word;
 }
 
-blockquote, q { quotes: &#8220 &#8220; }
+blockquote, q { quotes: \&#8220 \&#8220; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {

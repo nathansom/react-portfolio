@@ -2,10 +2,10 @@ import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import { About } from "About";
+import { Nav } from "Nav";
 
-describe("About", () => {
-  test("Render About component", () => {
-    render(<About />);
+describe("Nav", () => {
+  test("Render Nav component", () => {
+    render(<Nav />);
   });
 });
