@@ -1,5 +1,5 @@
 import TypeWriter from "react-typewriter";
-import { Nav } from "./Nav";
+import Nav from "./Nav";
 import { IOContext } from "../context/IOContextProvider";
 import { useContext, useEffect } from "react";
 
