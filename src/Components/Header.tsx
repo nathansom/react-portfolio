@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import TypeWriter from "react-typewriter";
+import { TypeAnimation } from "react-type-animation";
 
 import { Nav } from "./Nav";
 import { IOContext } from "../context/IOContextProvider";
@@ -33,14 +33,24 @@ export const Header = ({ data }: any) => {
       <div className="row banner">
         <div className="banner-text">
           {name && (
-            <h1 className="responsive-headline">
-              {/* <TypeWriter
-              fixed={true}
-              typing={1}
-            >{`Hi! I'm ${name}.`}</TypeWriter> */}
-
-              {`Hi! I'm ${name}.`}
-            </h1>
+            <TypeAnimation
+              sequence={[
+                `Hi! I'm ${name}.`,
+                1000,
+                "I'm a software developer.",
+                1000,
+                "I specialize in TypeScript & C#",
+                1500,
+                "My favourites are React.js, Node.js, ASP.NET, & .NET Core",
+                2500,
+                "Thank you for your visit!",
+                2000
+              ]}
+              speed={20}
+              wrapper="h1"
+              repeat={Infinity}
+              className="responsive-headline"
+            />
           )}
           {city && occupation && description && (
             <h3>
