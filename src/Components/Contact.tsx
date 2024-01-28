@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+import { IOContext } from "../context/IOContextProvider";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
@@ -8,7 +10,15 @@ export const Contact = ({ data }: any) => {
     [subject, setSubject] = useState(""),
     [message, setMessage] = useState(""),
     contactEmail = data?.email || "",
-    contactMessage = data?.contactmessage || "";
+    contactMessage = data?.contactmessage || "",
+    observer = useContext(IOContext);
+
+  useEffect(() => {
+    const section = document.getElementById("contact");
+
+    if (observer && observer instanceof IntersectionObserver && section)
+      observer.observe(section);
+  }, []);
 
   const submitForm = () => {
     window.open(

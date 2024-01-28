@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import "../styles/main.css";
 import "../styles/page.css";
-import { IOContextProvider } from "../context/IOContextProvider";
 
 export const metadata: Metadata = {
   title: "Nathan Somsa-ard | Full-Stack Software Developer | React | .NET | Power Platform",
@@ -18,11 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <IOContextProvider>
-        <body>
-          <div id="root">{children}</div>
-        </body>
-      </IOContextProvider>
+      <body>
+        <div id="root">{children}</div>
+      </body>
     </html>
   );
 }

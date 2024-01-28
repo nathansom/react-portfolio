@@ -2,15 +2,21 @@
 
 import { useContext, useEffect, useRef } from "react";
 
-import { IOContext } from "../context/IOContextProvider";
+import { InViewSectionContext } from "../context/IOContextProvider";
 
 export const Nav = () => {
   const scrollY = useRef(0),
     navWrapRef = useRef<HTMLDivElement>(null),
-    currentSectionId = useContext(IOContext);
+    homeRef = useRef<HTMLLIElement>(null),
+    aboutRef = useRef<HTMLLIElement>(null),
+    resumeRef = useRef<HTMLLIElement>(null),
+    portfolioRef = useRef<HTMLLIElement>(null),
+    testimonialsRef = useRef<HTMLLIElement>(null),
+    contactRef = useRef<HTMLLIElement>(null),
+    currentSectionId = useContext(InViewSectionContext);
 
   useEffect(() => {
-    const handleOnScroll = () => {
+    window.addEventListener("scroll", () => {
       if (navWrapRef.current) {
         if (window.scrollY > scrollY.current)
           navWrapRef.current.style.display = "none";
@@ -26,14 +32,46 @@ export const Nav = () => {
       }
 
       scrollY.current = window.scrollY;
-    };
-
-    window.addEventListener("scroll", handleOnScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleOnScroll);
-    };
+    });
   }, []);
+
+  useEffect(() => {
+    if (currentSectionId === "home" && homeRef.current) {
+      homeRef.current.classList.add("current");
+    } else {
+      homeRef.current?.classList.remove("current");
+    }
+
+    if (currentSectionId === "about" && aboutRef.current) {
+      aboutRef.current.classList.add("current");
+    } else {
+      aboutRef.current?.classList.remove("current");
+    }
+
+    if (currentSectionId === "resume" && resumeRef.current) {
+      resumeRef.current.classList.add("current");
+    } else {
+      resumeRef.current?.classList.remove("current");
+    }
+
+    if (currentSectionId === "portfolio" && portfolioRef.current) {
+      portfolioRef.current.classList.add("current");
+    } else {
+      portfolioRef.current?.classList.remove("current");
+    }
+
+    if (currentSectionId === "testimonials" && testimonialsRef.current) {
+      testimonialsRef.current.classList.add("current");
+    } else {
+      testimonialsRef.current?.classList.remove("current");
+    }
+
+    if (currentSectionId === "contact" && contactRef.current) {
+      contactRef.current.classList.add("current");
+    } else {
+      contactRef.current?.classList.remove("current");
+    }
+  }, [currentSectionId]);
 
   return (
     <nav id="nav-wrap" ref={navWrapRef}>
@@ -45,44 +83,32 @@ export const Nav = () => {
       </a>
 
       <ul id="nav" className="nav">
-        <li
-          className={currentSectionId === "home" ? "current" : ""}
-        >
+        <li ref={homeRef}>
           <a className="smoothscroll" href="#home">
             Home
           </a>
         </li>
-        <li
-          className={currentSectionId === "about" ? "current" : ""}
-        >
+        <li ref={aboutRef}>
           <a className="smoothscroll" href="#about">
             About
           </a>
         </li>
-        <li
-          className={currentSectionId === "resume" ? "current" : ""}
-        >
+        <li ref={resumeRef}>
           <a className="smoothscroll" href="#resume">
             Resume
           </a>
         </li>
-        <li
-          className={currentSectionId === "portfolio" ? "current" : ""}
-        >
+        <li ref={portfolioRef}>
           <a className="smoothscroll" href="#portfolio">
             Works
           </a>
         </li>
-        <li
-          className={currentSectionId === "testimonials" ? "current" : ""}
-        >
+        <li ref={testimonialsRef}>
           <a className="smoothscroll" href="#testimonials">
             Testimonials
           </a>
         </li>
-        <li
-          className={currentSectionId === "contact" ? "current" : ""}
-        >
+        <li ref={contactRef}>
           <a className="smoothscroll" href="#contact">
             Contact
           </a>

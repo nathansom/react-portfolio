@@ -1,51 +1,60 @@
 'use client'
 
-import { ReactNode, createContext, useEffect, useState } from "react";
+import { createContext, useReducer } from "react";
 
-export const IOContext = createContext("");
+const ioReducer = (prevState: any, action: any) => {
+  const { type, sectionId, intersectionRatio } = action;
 
-export const IOContextProvider = ({ children }: { children: ReactNode }) => {
-  const [currentSectionId, setCurrentSectionId] = useState("home");
+  if (type === "set_current_section")
+    return {
+      ...prevState,
+      currentSectionId: sectionId
+    };
 
-  let observer: IntersectionObserver | null = null;
+  if (type === "set_prev_intersect_ratio")
+    return { ...prevState, prevIntersectRatio: intersectionRatio };
 
-  useEffect(() => {
+  return prevState
+};
+
+export const IOContext = createContext<IntersectionObserver | null>(null);
+
+export const InViewSectionContext = createContext<string>("");
+
+export const IOContextProvider = ({ children }: { children: JSX.Element }) => {
+  const [state, dispatch] = useReducer(ioReducer, {
+      currentSectionId: "home",
+      prevIntersectRatio: 0,
+    }),
+    { currentSectionId } = state,
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((el) => {
-          let prevIntersectRatio = 0;
-          
-          if (el.isIntersecting && el.intersectionRatio > prevIntersectRatio) {
-            setCurrentSectionId(el.target.id);
-            prevIntersectRatio = el.intersectionRatio;
-          } 
+          if (el.intersectionRatio > 0) {
+            dispatch({
+              type: "set_current_section",
+              sectionId: el.target.id,
+            });
+          }
+
+          dispatch({
+            type: "set_prev_intersect_ratio",
+            prevIntersectRatio: el.intersectionRatio,
+          });
         });
       },
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.27,
+        threshold: 1.0,
       }
     );
 
-    const sections = [
-      ...document.querySelectorAll("section"),
-      ...document.querySelectorAll("header"),
-      ...document.querySelectorAll("footer"),
-    ];
-
-    sections.forEach((section: HTMLElement) => {
-      observer?.observe(section);
-    });
-
-    return () => {
-      observer?.disconnect();
-    };
-  }, []);
-
   return (
-    <IOContext.Provider value={currentSectionId}>
+    <IOContext.Provider value={observer}>
+      <InViewSectionContext.Provider value={currentSectionId}>
         {children}
+      </InViewSectionContext.Provider>
     </IOContext.Provider>
   );
 };
