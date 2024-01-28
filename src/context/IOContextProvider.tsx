@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext, useReducer } from "react";
 
 const ioReducer = (prevState: any, action: any) => {
@@ -15,16 +17,16 @@ const ioReducer = (prevState: any, action: any) => {
   return prevState
 };
 
-export const IOContext = createContext({});
+export const IOContext = createContext<IntersectionObserver | null>(null);
 
-export const InViewSectionContext = createContext("");
+export const InViewSectionContext = createContext<string>("");
 
 export const IOContextProvider = ({ children }: { children: JSX.Element }) => {
   const [state, dispatch] = useReducer(ioReducer, {
       currentSectionId: "home",
       prevIntersectRatio: 0,
     }),
-    { currentSectionId, prevIntersectRatio } = state,
+    { currentSectionId } = state,
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((el) => {

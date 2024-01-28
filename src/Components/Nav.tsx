@@ -1,3 +1,5 @@
+'use client'
+
 import { useContext, useEffect, useRef } from "react";
 
 import { InViewSectionContext } from "../context/IOContextProvider";

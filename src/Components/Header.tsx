@@ -1,3 +1,5 @@
+'use client'
+
 import { useContext, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
@@ -44,7 +46,7 @@ export const Header = ({ data }: any) => {
                 "My favourites are React.js, Node.js, ASP.NET, & .NET Core",
                 2500,
                 "Thank you for your visit!",
-                2000
+                2000,
               ]}
               speed={20}
               wrapper="h1"

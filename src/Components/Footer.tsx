@@ -1,16 +1,15 @@
-import React from "react";
+'use client'
 
 export const Footer = ({ data }: any) => {
-  const networks = data?.social?.map((network: Record<string,string>) => {
-      return (
-        <li key={network.name}>
-          <a href={network.url}>
-            <i className={network.className}></i>
-          </a>
-        </li>
-      );
-    });
-  
+  const networks = data?.social?.map((network: Record<string, string>) => {
+    return (
+      <li key={network.name}>
+        <a href={network.url}>
+          <i className={network.className}></i>
+        </a>
+      </li>
+    );
+  });
 
   return (
     <footer>

@@ -1,8 +1,11 @@
+'use client'
+
 import { useContext, useEffect } from "react";
+import Image from "next/image";
 
 import { IOContext } from "../context/IOContextProvider";
 
-export const Portfolio = ({ data }: {data: any}) => {
+export const Portfolio = ({ data }: { data: any }) => {
   const projects = data?.projects?.map((projects: Record<string, string>) => {
       const projectImage = "images/portfolio/" + projects.image;
 
@@ -15,7 +18,7 @@ export const Portfolio = ({ data }: {data: any}) => {
               target="_blank"
               rel="noreferrer nofollow"
             >
-              <img
+              <Image
                 alt={projects.title}
                 src={projectImage}
                 width="400"

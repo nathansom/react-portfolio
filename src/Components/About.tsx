@@ -1,5 +1,8 @@
-import { useContext, useEffect } from "react";
+'use client'
 
+import { useContext, useEffect } from "react";
+import Image from "next/image";
+import profilepic from "../../public/images/profilepic.jpg";
 import { IOContext } from "../context/IOContextProvider";
 
 export const About = ({
@@ -8,7 +11,7 @@ export const About = ({
   data: { image?: string; bio?: string; resumedownload?: string };
 }) => {
   const observer = useContext(IOContext),
-    profilepic = data.image ? "images/" + data.image : null,
+   // profilepic = data.image ? "images/" + data.image : null,
     bio = data.bio,
     resumeDownload = data.resumedownload;
 
@@ -24,11 +27,7 @@ export const About = ({
       <div className="row">
         <div className="three columns">
           {profilepic && (
-            <img
-              className="profile-pic"
-              src={profilepic}
-              alt="Sonny's Profile Pic"
-            />
+            <Image src={profilepic} alt="Nathan's profile picture" />
           )}
         </div>
         <div className="nine columns main-col">

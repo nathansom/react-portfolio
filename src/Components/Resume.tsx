@@ -1,10 +1,12 @@
+'use client'
+
 import { useContext, useEffect } from "react";
 
 import { IOContext } from "../context/IOContextProvider";
 
-export const Resume = ({ data }) => {
+export const Resume = ({ data }: any) => {
   const skillmessage = data?.skillmessage,
-    education = data?.education?.map((education) => {
+    education = data?.education?.map((education: Record<string, string>) => {
       return (
         <div key={education.school}>
           <h3>{education.school}</h3>
@@ -16,7 +18,7 @@ export const Resume = ({ data }) => {
         </div>
       );
     }),
-    work = data?.work?.map((work) => {
+    work = data?.work?.map((work: Record<string, string>) => {
       return (
         <div key={work.company}>
           <h3>{work.company}</h3>
@@ -28,7 +30,7 @@ export const Resume = ({ data }) => {
         </div>
       );
     }),
-    skills = data?.skills?.map((skills) => {
+    skills = data?.skills?.map((skills: Record<string, string>) => {
       const className = "bar-expand " + skills.name.toLowerCase();
 
       return (
@@ -41,12 +43,10 @@ export const Resume = ({ data }) => {
     observer = useContext(IOContext);
 
   useEffect(() => {
-    const section = document.getElementById("resume");;
+    const section = document.getElementById("resume");
 
     if (observer && section)
-      (observer as IntersectionObserver).observe(
-        section
-      );
+      (observer as IntersectionObserver).observe(section);
   }, []);
 
   return (
