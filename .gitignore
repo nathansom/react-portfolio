@@ -11,6 +11,9 @@
 # production
 /build
 
+# Next.js
+next-env.d.ts
+
 # misc
 .DS_Store
 .env.local

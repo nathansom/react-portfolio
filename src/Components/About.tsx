@@ -1,23 +1,11 @@
-import { useContext, useEffect } from "react";
-
-import { IOContext } from "../context/IOContextProvider";
-
 export const About = ({
   data,
 }: {
   data: { image?: string; bio?: string; resumedownload?: string };
 }) => {
-  const observer = useContext(IOContext),
-    profilepic = data.image ? "images/" + data.image : null,
+  const profilepic = data.image ? "images/" + data.image : null,
     bio = data.bio,
     resumeDownload = data.resumedownload;
-
-  useEffect(() => {
-    const section = document.getElementById("about");
-
-    if (observer && observer instanceof IntersectionObserver && section)
-      observer.observe(section);
-  }, []);
 
   return (
     <section id="about">

@@ -1,7 +1,3 @@
-import { useContext, useEffect } from "react";
-
-import { IOContext } from "../context/IOContextProvider";
-
 export const Resume = ({ data }) => {
   const skillmessage = data?.skillmessage,
     education = data?.education?.map((education) => {
@@ -37,17 +33,7 @@ export const Resume = ({ data }) => {
           <em>{skills.name}</em>
         </li>
       );
-    }),
-    observer = useContext(IOContext);
-
-  useEffect(() => {
-    const section = document.getElementById("resume");;
-
-    if (observer && section)
-      (observer as IntersectionObserver).observe(
-        section
-      );
-  }, []);
+    });
 
   return (
     <section id="resume">

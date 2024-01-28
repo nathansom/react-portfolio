@@ -1,7 +1,3 @@
-import { useContext, useEffect } from "react";
-
-import { IOContext } from "../context/IOContextProvider";
-
 export const Testimonials = ({ data }: any) => {
   const testimonials = data?.testimonials?.map((testimonials: Record<string, string>) => {
       return (
@@ -12,14 +8,7 @@ export const Testimonials = ({ data }: any) => {
           </blockquote>
         </li>
       );
-    }),
-    observer = useContext(IOContext);
-
-  useEffect(() => {
-    const section = document.getElementById("testimonials");
-    if (observer && section)
-      (observer as IntersectionObserver).observe(section);
-  }, []);
+    });
 
   return (
     <section id="testimonials">
