@@ -1,9 +1,3 @@
-'use client'
-
-import { useContext, useEffect } from "react";
-
-import { IOContext } from "../context/IOContextProvider";
-
 export const Resume = ({ data }: any) => {
   const skillmessage = data?.skillmessage,
     education = data?.education?.map((education: Record<string, string>) => {
@@ -39,15 +33,7 @@ export const Resume = ({ data }: any) => {
           <em>{skills.name}</em>
         </li>
       );
-    }),
-    observer = useContext(IOContext);
-
-  useEffect(() => {
-    const section = document.getElementById("resume");
-
-    if (observer && section)
-      (observer as IntersectionObserver).observe(section);
-  }, []);
+    });
 
   return (
     <section id="resume">

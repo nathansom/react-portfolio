@@ -1,10 +1,8 @@
-'use client'
+"use client";
 
-import { useContext, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 import { Nav } from "./Nav";
-import { IOContext } from "../context/IOContextProvider";
 
 export const Header = ({ data }: any) => {
   const name = data?.name,
@@ -19,14 +17,7 @@ export const Header = ({ data }: any) => {
           </a>
         </li>
       );
-    }),
-    observer = useContext(IOContext);
-
-  useEffect(() => {
-    const section = document.getElementById("home");
-    if (observer && observer instanceof IntersectionObserver && section)
-      observer.observe(section);
-  }, []);
+    });
 
   return (
     <header id="home">

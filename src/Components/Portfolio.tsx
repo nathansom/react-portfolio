@@ -1,12 +1,7 @@
-'use client'
-
-import { useContext, useEffect } from "react";
 import Image from "next/image";
 
-import { IOContext } from "../context/IOContextProvider";
-
-export const Portfolio = ({ data }: { data: any }) => {
-  const projects = data?.projects?.map((projects: Record<string, string>) => {
+export const Portfolio = ({ data }: {data: any}) => {
+const projects = data?.projects?.map((projects: Record<string, string>) => {
       const projectImage = "images/portfolio/" + projects.image;
 
       return (
@@ -37,15 +32,7 @@ export const Portfolio = ({ data }: { data: any }) => {
           </div>
         </div>
       );
-    }),
-    observer = useContext(IOContext);
-
-  useEffect(() => {
-    const section = document.getElementById("portfolio");
-
-    if (observer && section)
-      (observer as IntersectionObserver).observe(section);
-  }, []);
+    });
 
   return (
     <section id="portfolio">
