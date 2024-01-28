@@ -1,0 +1,98 @@
+"use client";
+
+import { TypeAnimation } from "react-type-animation";
+
+import { Nav } from "./Nav";
+
+export const Header = ({ data }: any) => {
+  const name = data?.name,
+    occupation = data?.occupation,
+    description = data?.description,
+    city = data?.city,
+    networks = data?.social?.map((network: Record<string, string>) => {
+      return (
+        <li key={network.name}>
+          <a href={network.url}>
+            <i className={network.className}></i>
+          </a>
+        </li>
+      );
+    });
+
+  return (
+    <header id="home">
+      <Nav />
+
+      <div className="row banner">
+        <div className="banner-text">
+          {name && (
+            <TypeAnimation
+              sequence={[
+                `Hi! I'm ${name}.`,
+                1000,
+                "I'm a software developer.",
+                1000,
+                "I specialize in TypeScript & C#",
+                1500,
+                "My favourites are React.js, Node.js, ASP.NET, & .NET Core",
+                2500,
+                "Thank you for your visit!",
+                2000,
+              ]}
+              speed={20}
+              wrapper="h1"
+              repeat={Infinity}
+              className="responsive-headline"
+            />
+          )}
+          {city && occupation && description && (
+            <h3>
+              Based in {city}. <span>{occupation}</span>. {description}.
+            </h3>
+          )}
+          <hr />
+          {networks && <ul className="social">{networks}</ul>}
+        </div>
+      </div>
+      <p className="scrolldown animate-updown">
+        <a className="smoothscroll" href="#about">
+          <i className="icon-down-circle"></i>
+        </a>
+      </p>
+      <div className="decor-left animate-spincw">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="300"
+          height="300"
+          fill="#000000"
+          viewBox="0 0 16 16"
+        >
+          <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z" />
+        </svg>
+      </div>
+      <div className="decor-right animate-spinccw">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200"
+          fill="#000000"
+          viewBox="0 0 16 16"
+        >
+          <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z" />
+        </svg>
+      </div>
+      <div className="divider-bottom">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#2B2B2B"
+          preserveAspectRatio="none"
+          viewBox="0 0 1000 100"
+        >
+          <path d="M1000 0L0 100h1000V0z"></path>
+        </svg>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
