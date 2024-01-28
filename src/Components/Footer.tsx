@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 export const Footer = ({ data }: any) => {
   const networks = data?.social?.map((network: Record<string, string>) => {
