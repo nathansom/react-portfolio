@@ -5,8 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { Nav } from "./Nav";
 
 export const Header = ({ data }: any) => {
-  const name = data?.fullName,
-  firstName = data?.firstName,
+  const firstName = data?.firstName,
     occupation = data?.occupation,
     description = data?.description,
     city = data?.city,
