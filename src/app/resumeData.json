@@ -1,6 +1,8 @@
 {
   "main": {
-    "name": "Nathan Somsa-ard",
+    "fullName": "Nathan Somsa-ard",
+    "firstName": "Nathan",
+    "lastName": "Somsa-ard",
     "occupation": "Full-Stack Software Developer and Power Platform Developer and Consultant",
     "description": "I love semantic, testable and clean code and I want to share this love with you.",
     "image": "profilepic.webp",
@@ -24,7 +26,7 @@
     ]
   },
   "resume": {
-    "skillmessage": "Programming Language Proficiency",
+    "skillmessage": "",
     "education": [
       {
         "school": "University of British Columbia - Canada",
@@ -56,59 +58,83 @@
     "skills": [
       {
         "name": "HTML5",
-        "level": "100%"
+        "level": "100%",
+        "image": "html5.svg"
       },
       {
         "name": "CSS3",
-        "level": "100%"
+        "level": "100%",
+        "image": "css3.svg"
       },
       {
         "name": "TypeScript",
-        "level": "100%"
+        "level": "100%",
+        "image": "typescript.svg"
       },
       {
         "name": "JavaScript",
-        "level": "100%"
+        "level": "100%",
+        "image": "javascript.svg"
       },
       {
         "name": "ReactJS",
-        "level": "100%"
+        "level": "100%",
+        "image": "react.svg"
       },
       {
         "name": "NodeJS",
-        "level": "100%"
+        "level": "100%",
+        "image": "nodejs.svg"
       },
       {
         "name": "C#",
-        "level": "100%"
+        "level": "100%",
+        "image": "csharp.svg"
       },
       {
-        "name": "ASP.NET",
-        "level": "100%"
-      },
-      {
-        "name": ".NET Core",
-        "level": "100%"
-      },
-      {
-        "name": ".NET Framework",
-        "level": "100%"
-      },
-      {
-        "name": "Power Platform Development",
-        "level": "100%"
-      },
-      {
-        "name": "WordPress Development",
-        "level": "90%"
+        "name": ".NET",
+        "level": "100%",
+        "image": "dotnet.svg"
       },
       {
         "name": "Python",
-        "level": "80%"
+        "level": "100%",
+        "image": "python.svg"
       },
       {
         "name": "Git",
-        "level": "100%"
+        "level": "100%",
+        "image": "git.svg"
+      },
+      {
+        "name": "Nx",
+        "level": "100%",
+        "image": "nx.svg"
+      },
+      {
+        "name": "Playwright",
+        "level": "100%",
+        "image": "playwright.svg"
+      },
+      {
+        "name": "Cypress",
+        "level": "100%",
+        "image": "cypress.svg"
+      },
+      {
+        "name": "Jest",
+        "level": "100%",
+        "image": "jest.svg"
+      },
+      {
+        "name": "Storybook",
+        "level": "100%",
+        "image": "storybook.svg"
+      },
+      {
+        "name": "GraphQL",
+        "level": "100%",
+        "image": "graphql.svg"
       }
     ]
   },
@@ -116,15 +142,27 @@
     "projects": [
       {
         "title": "Longitude Immigration Website",
-        "category": "",
+        "category": "Web Design",
         "image": "lgtimmigration.webp",
-        "url": "https://lgtimmigration.ca"
+        "url": "https://lgtimmigration.ca",
+        "paid": true,
+        "tags": ["WordPress", "PHP", "JavaScript", "CSS", "HTML"]
       },
       {
         "title": "Willow Tree Wellness Landing Website",
-        "category": "",
+        "category": "Web Design",
         "image": "willowtreermt.webp",
-        "url": "https://willowtreewellnessrmt.ca"
+        "url": "https://willowtreewellnessrmt.ca",
+        "paid": true,
+        "tags": ["WordPress", "JavaScript", "CSS", "HTML"]
+      },
+      {
+        "title": "Find Thy Face",
+        "category": "Full Stack Development",
+        "image": "findthyface.webp",
+        "url": "https://find-thy-face.vercel.app",
+        "paid": false,
+        "tags": ["React.js", "Node.js", "Express.js", "Postgres", "Tensorflow.js", "Tailwind", "Docker"]
       }
       
     ]

@@ -22,7 +22,7 @@
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 
-body { background: #202020; }
+body { background: #ffffff; }
 
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
@@ -298,7 +298,7 @@ ul#nav li.current a { color: #1b8deb; }
 #resume .header-col { padding-top: 9px; }
 #resume .main-col { padding-right: 10%; }
 
-.education, .work {
+.education, .work, .skill {
    margin-bottom: 48px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
@@ -465,6 +465,7 @@ div#portfolio-wrapper {
    flex-wrap: wrap;
    justify-content: space-evenly;
    align-items: center;
+   margin-top: 30px;
 }
 
 #portfolio h1 {
@@ -1023,6 +1024,7 @@ call-to-action .button {
 footer {
    padding-top: 48px;
    margin-bottom: 48px;
+   background-color: #202020;
    color: #757575;
    font-size: 14px;
    text-align: center;

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const Resume = ({ data }: any) => {
   const skillmessage = data?.skillmessage,
     education = data?.education?.map((education: Record<string, string>) => {
@@ -12,28 +14,40 @@ export const Resume = ({ data }: any) => {
         </div>
       );
     }),
-    work = data?.work?.map((work: Record<string, string>) => {
-      return (
-        <div key={work.company}>
-          <h3>{work.company}</h3>
-          <p className="info">
-            {work.title}
-            <span>&bull;</span> <em className="date">{work.years}</em>
-          </p>
-          <p>{work.description}</p>
-        </div>
-      );
-    }),
-    skills = data?.skills?.map((skills: Record<string, string>) => {
-      const className = "bar-expand " + skills.name.toLowerCase();
-
-      return (
-        <li key={skills.name}>
-          <span style={{ width: skills.level }} className={className}></span>
-          <em>{skills.name}</em>
-        </li>
-      );
-    });
+    work: JSX.Element[] | undefined = data?.work?.map(
+      (work: {
+        company: string;
+        title: string;
+        years: string;
+        description: string;
+      }) => {
+        return (
+          <div key={work.company}>
+            <h3>{work.company}</h3>
+            <p className="info">
+              {work.title}
+              <span>&bull;</span> <em className="date">{work.years}</em>
+            </p>
+            <p>{work.description}</p>
+          </div>
+        );
+      }
+    ),
+    skills: JSX.Element[] | undefined = data?.skills?.map(
+      (skill: { name: string; image: string; level: string }) => {
+        return (
+          <Image
+            key={skill.name}
+            alt={skill.name}
+            title={skill.name}
+            src={`images/skills/${skill.image}`}
+            width={100}
+            height={100}
+            style={{ maxHeight: 100, maxWidth: 100 }}
+          />
+        );
+      }
+    );
 
   return (
     <section id="resume">
@@ -47,21 +61,6 @@ export const Resume = ({ data }: any) => {
           <path d="M1000 0L0 100h1000V0z"></path>
         </svg>
       </div>
-      {education && (
-        <div className="row education">
-          <div className="three columns header-col">
-            <h1>
-              <span>Education</span>
-            </h1>
-          </div>
-
-          <div className="nine columns main-col">
-            <div className="row item">
-              <div className="twelve columns">{education}</div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {work && (
         <div className="row work">
@@ -86,12 +85,37 @@ export const Resume = ({ data }: any) => {
           <div className="nine columns main-col">
             {skillmessage && <p>{skillmessage}</p>}
 
-            <div className="bars">
-              <ul className="skills">{skills}</ul>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gap: 20,
+              }}
+            >
+              {skills}
             </div>
           </div>
         </div>
       )}
+
+      {education && (
+        <div className="row education">
+          <div className="three columns header-col">
+            <h1>
+              <span>Education</span>
+            </h1>
+          </div>
+
+          <div className="nine columns main-col">
+            <div className="row item">
+              <div className="twelve columns">{education}</div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="divider-bottom">
         <svg
           xmlns="http://www.w3.org/2000/svg"

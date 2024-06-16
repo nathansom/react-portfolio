@@ -5,7 +5,8 @@ import { TypeAnimation } from "react-type-animation";
 import { Nav } from "./Nav";
 
 export const Header = ({ data }: any) => {
-  const name = data?.name,
+  const name = data?.fullName,
+  firstName = data?.firstName,
     occupation = data?.occupation,
     description = data?.description,
     city = data?.city,
@@ -25,18 +26,28 @@ export const Header = ({ data }: any) => {
 
       <div className="row banner">
         <div className="banner-text">
-          {name && (
+          {firstName && (
             <TypeAnimation
               sequence={[
-                `Hi! I'm ${name}.`,
+                `Hi! I'm ${firstName}.`,
                 1000,
-                "I'm a software developer.",
+                "I'm a developer.",
                 1000,
-                "I specialize in TypeScript & C#",
+                "My stack includes . . .",
                 1500,
-                "My favourites are React.js, Node.js, ASP.NET, & .NET Core",
-                2500,
-                "Thank you for your visit!",
+                "TypeScript",
+                1000,
+                "C#",
+                1000,
+                "React.js",
+                1000,
+                "Node.js",
+                1000,
+                ".NET",
+                1000,
+                "and more . . .",
+                1000,
+                "Let's talk!",
                 2000,
               ]}
               speed={20}
