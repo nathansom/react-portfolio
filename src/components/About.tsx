@@ -15,7 +15,7 @@ export const About = ({
       <div className="row">
         <div className="three columns">
           {profilepic && (
-            <Image src={profilepic} alt="Nathan's profile picture" />
+            <Image src={profilepic} alt="Nathan's profile picture" style={{borderRadius: "50%"}} />
           )}
         </div>
         <div className="nine columns main-col">

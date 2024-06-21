@@ -141,11 +141,62 @@
   "portfolio": {
     "projects": [
       {
+        "title": "Find Thy Face",
+        "category": "Full Stack Development",
+        "image": "findthyface.webp",
+        "url": "https://find-thy-face.vercel.app",
+        "github": "https://github.com/nathansom/find-thy-face-nx",
+        "paid": false,
+        "description": "Detect faces in an image using Tensorflow.js",
+        "tags": [
+          "React.js",
+          "Node.js",
+          "Express.js",
+          "Postgres",
+          "Tensorflow.js",
+          "Tailwind",
+          "Docker"
+        ]
+      },
+      {
+        "title": "Amazon Clone",
+        "category": "Full Stack Development",
+        "image": "amazonclone.webp",
+        "url": "https://amazon-clone-nextjs-ns.vercel.app/",
+        "github": "https://github.com/nathansom/amazon-clone-nextjs",
+        "paid": false,
+        "description": "E-commerce web application with Stripe integration and also allows users to view their past orders",
+        "tags": [
+          "React.js",
+          "Next.js",
+          "Firebase",
+          "Stripe",
+          "JavaScript",
+          "Tailwind"
+        ]
+      },
+      {
+        "title": "Aloha! Air",
+        "category": "Full Stack Development",
+        "image": "alohaair.webp",
+        "url": "https://aloha-air.pages.dev/",
+        "github": "https://github.com/nathansom/aloha-air-fe-angular",
+        "paid": false,
+        "description": "Flights schedule and admin portal for adding/modifying/deleting flights",
+        "tags": [
+          "Angular",
+          "Nest.js",
+          "Postgres",
+          "TypeScript"
+        ]
+      },
+      {
         "title": "Longitude Immigration Website",
         "category": "Web Design",
         "image": "lgtimmigration.webp",
         "url": "https://lgtimmigration.ca",
         "paid": true,
+        "description": "Business website for an immigration consultancy featuring multi-lingual localization and vector graphics manipulation",
         "tags": ["WordPress", "PHP", "JavaScript", "CSS", "HTML"]
       },
       {
@@ -154,17 +205,9 @@
         "image": "willowtreermt.webp",
         "url": "https://willowtreewellnessrmt.ca",
         "paid": true,
+        "description": "Business website for a registered massage therapy clinic",
         "tags": ["WordPress", "JavaScript", "CSS", "HTML"]
-      },
-      {
-        "title": "Find Thy Face",
-        "category": "Full Stack Development",
-        "image": "findthyface.webp",
-        "url": "https://find-thy-face.vercel.app",
-        "paid": false,
-        "tags": ["React.js", "Node.js", "Express.js", "Postgres", "Tensorflow.js", "Tailwind", "Docker"]
       }
-      
     ]
   },
   "testimonials": {

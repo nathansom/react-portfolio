@@ -462,6 +462,7 @@ ul#nav li.current a { color: #1b8deb; }
 div#portfolio-wrapper {
    display: flex;
    align-content: center;
+   flex-direction: column;
    flex-wrap: wrap;
    justify-content: space-evenly;
    align-items: center;
