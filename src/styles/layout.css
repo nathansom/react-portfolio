@@ -453,6 +453,11 @@ ul#nav li.current a { color: #1b8deb; }
 /* e. Portfolio Section
 /* ------------------------------------------------------------------ */
 
+.portfolio-wrapper {
+   display: flex;
+   flex-direction: row;
+}
+
 #portfolio {
    background: #2B2B2B;
    padding-top: 90px;

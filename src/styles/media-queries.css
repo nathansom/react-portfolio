@@ -21,6 +21,7 @@
    .animate-updown {
       animation-duration: 0ms;
    }
+
    .animate-pulse {
       animation-duration: 0ms;
    }
@@ -343,6 +344,15 @@
 
    /* Portfolio Section
    /* ----------------------------------------------------------------- */
+   .portfolio-wrapper {
+      display       : flex;
+      flex-direction: column;
+   }
+
+   .portfolio-wrapper > div {
+      margin-top: 20px;
+   }
+
    #portfolio-wrapper .columns {
       margin-bottom: 40px;
    }

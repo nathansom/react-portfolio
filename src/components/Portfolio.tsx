@@ -18,7 +18,7 @@ export const Portfolio = ({ data }: { data: any }) => {
       return (
         <div
           key={project.title}
-          style={{ display: "flex", flexDirection: "row" }}
+          className="portfolio-wrapper"
         >
           <Image
             alt={project.title}
@@ -34,6 +34,7 @@ export const Portfolio = ({ data }: { data: any }) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 gap: 5,
                 marginTop: 25,
               }}
