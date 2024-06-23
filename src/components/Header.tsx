@@ -56,9 +56,11 @@ export const Header = ({ data }: any) => {
             />
           )}
           {city && occupation && description && (
-            <h3>
-              Based in {city}. <span>{occupation}</span>. {description}.
-            </h3>
+            <>
+              <p style={{ color: "#1b8deb", fontWeight: "bold", fontSize: "2rem", margin: 0 }}>{occupation}</p>
+              <p>Based in {city}</p>
+              <p>{description}</p>
+            </>
           )}
           <hr />
           {networks && <ul className="social">{networks}</ul>}

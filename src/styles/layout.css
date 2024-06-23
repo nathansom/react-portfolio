@@ -282,12 +282,12 @@ ul#nav li.current a { color: #1b8deb; }
 #resume a, #resume a:visited  { color: #11ABB0; }
 #resume a:hover, #resume a:focus { color: #313131; }
 
-#resume h1 {
+#resume h2 {
    font: 18px/24px 'opensans-bold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
 }
-#resume h1 span {
+#resume h2 span {
    border-bottom: 3px solid #11ABB0;
    padding-bottom: 6px;
 }
@@ -474,13 +474,15 @@ div#portfolio-wrapper {
    margin-top: 30px;
 }
 
-#portfolio h1 {
+#portfolio h2 {
    font: 3rem/2rem 'opensans-semibold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
    text-align: center;
    margin-bottom: 48px;
    color: #ffffff;
+   text-decoration: underline;
+   text-decoration-color: aquamarine;
 }
 
 /* Portfolio Content */

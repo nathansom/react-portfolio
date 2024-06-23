@@ -3,7 +3,7 @@
     "fullName": "Nathan Somsa-ard",
     "firstName": "Nathan",
     "lastName": "Somsa-ard",
-    "occupation": "Full-Stack Software Developer and Power Platform Developer and Consultant",
+    "occupation": "Full-Stack Software Developer & Power Platform Developer",
     "description": "I love semantic, testable and clean code and I want to share this love with you.",
     "image": "profilepic.webp",
     "bio": "Hello! I am Nathan. I am a self-taught software developer passionate in building delightful web applications that transform business. I founded my own digital agency in 2020, named Adcuro Digital, to help local businesses adapt to the digital-first climate. My focus back then was WordPress development and integration with popular CRM. Now, I am working full-time as Power Platform developer and is enjoying developing solutions on this heavy-duty ERP/CRM platform.",
@@ -80,6 +80,16 @@
         "name": "ReactJS",
         "level": "100%",
         "image": "react.svg"
+      },
+      {
+        "name": "Redux",
+        "level": "100%",
+        "image": "redux.svg"
+      },
+      {
+        "name": "NextJS",
+        "level": "100%",
+        "image": "nextjs.svg"
       },
       {
         "name": "NodeJS",
@@ -168,6 +178,7 @@
         "description": "E-commerce web application with Stripe integration and also allows users to view their past orders",
         "tags": [
           "React.js",
+          "Redux",
           "Next.js",
           "Firebase",
           "Stripe",
