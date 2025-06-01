@@ -169,24 +169,6 @@
         ]
       },
       {
-        "title": "Amazon Clone",
-        "category": "Full Stack Development",
-        "image": "amazonclone.webp",
-        "url": "https://amazon-clone-nextjs-ns.vercel.app/",
-        "github": "https://github.com/nathansom/amazon-clone-nextjs",
-        "paid": false,
-        "description": "E-commerce web application with Stripe integration and also allows users to view their past orders",
-        "tags": [
-          "React.js",
-          "Redux",
-          "Next.js",
-          "Firebase",
-          "Stripe",
-          "JavaScript",
-          "Tailwind"
-        ]
-      },
-      {
         "title": "Aloha! Air",
         "category": "Full Stack Development",
         "image": "alohaair.webp",
