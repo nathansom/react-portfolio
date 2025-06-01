@@ -10,7 +10,6 @@ export const Contact = ({ data }: any) => {
     [message, setMessage] = useState(""),
     [submissionErrorMsg, setSubmissionErrorMsg] = useState(""),
     [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false),
-    contactEmail = data?.email || "",
     contactMessage = data?.contactmessage || "",
     formRef = useRef<HTMLFormElement>(null);
 
