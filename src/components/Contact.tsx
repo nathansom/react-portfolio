@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { MouseEvent, useRef, useState } from "react";
+import { FormEvent, MouseEvent, useRef, useState } from "react";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
@@ -13,12 +13,10 @@ export const Contact = ({ data }: any) => {
     contactMessage = data?.contactmessage || "",
     formRef = useRef<HTMLFormElement>(null);
 
-  const submitForm = async (e: MouseEvent<HTMLButtonElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formRef.current) return;
-
-    const formData = new FormData(formRef.current);
+    const formData = new FormData(e.currentTarget);
 
     try {
       await fetch("/", {
@@ -30,6 +28,10 @@ export const Contact = ({ data }: any) => {
       });
 
       setIsSubmissionSuccessful(true);
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
     } catch (e: unknown) {
       const errorMsg =
         typeof e === "object" &&
@@ -43,7 +45,7 @@ export const Contact = ({ data }: any) => {
 
       setSubmissionErrorMsg(errorMsg);
     }
-  };
+  }
 
   return (
     <>
@@ -76,7 +78,7 @@ export const Contact = ({ data }: any) => {
 
         <div className="row">
           <div className="eight columns centered">
-            <form name="contact" ref={formRef} data-netlify={true}>
+            <form name="contact" ref={formRef} onSubmit={onSubmit} data-netlify={true}>
               <fieldset>
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -140,9 +142,7 @@ export const Contact = ({ data }: any) => {
                 ></div>
 
                 <div>
-                  <button onClick={submitForm} type="submit" className="submit">
-                    Submit
-                  </button>
+                 <input type="submit" value="Submit" />
                 </div>
               </fieldset>
             </form>
