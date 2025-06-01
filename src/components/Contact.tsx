@@ -14,8 +14,6 @@ export const Contact = ({ data }: any) => {
     formRef = useRef<HTMLFormElement>(null);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
     const formData = new FormData(e.currentTarget);
 
     try {
@@ -26,6 +24,8 @@ export const Contact = ({ data }: any) => {
           formData as unknown as Record<string, string>
         ).toString(),
       });
+
+      e.preventDefault();
 
       setIsSubmissionSuccessful(true);
       setName("");
