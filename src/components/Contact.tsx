@@ -82,6 +82,7 @@ export const Contact = ({ data }: any) => {
               name="contact"
               ref={formRef}
               onSubmit={onSubmit}
+              data-netlify-recaptcha="true"
               data-netlify="true"
             >
               <fieldset>
@@ -141,10 +142,7 @@ export const Contact = ({ data }: any) => {
                   ></textarea>
                 </div>
 
-                <div
-                  className="g-recaptcha"
-                  data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SECRET}
-                ></div>
+                <div data-netlify-recaptcha="true"></div>
 
                 <div>
                   <button type="submit" className="submit">
