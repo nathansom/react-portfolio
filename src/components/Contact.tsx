@@ -45,7 +45,7 @@ export const Contact = ({ data }: any) => {
 
       setSubmissionErrorMsg(errorMsg);
     }
-  }
+  };
 
   return (
     <>
@@ -78,7 +78,12 @@ export const Contact = ({ data }: any) => {
 
         <div className="row">
           <div className="eight columns centered">
-            <form name="contact" ref={formRef} onSubmit={onSubmit} data-netlify={true}>
+            <form
+              name="contact"
+              ref={formRef}
+              onSubmit={onSubmit}
+              data-netlify={true}
+            >
               <fieldset>
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -142,7 +147,9 @@ export const Contact = ({ data }: any) => {
                 ></div>
 
                 <div>
-                 <input type="submit" value="Submit" />
+                  <button type="submit" className="submit">
+                    Submit
+                  </button>
                 </div>
               </fieldset>
             </form>
