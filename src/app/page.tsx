@@ -18,14 +18,14 @@ export default async function Page() {
   if (!resumeData) return null;
 
   return (
-    <div className="App">
-      <Header data={resumeData.main} />
-      <About data={resumeData.main} />
-      <Resume data={resumeData.resume} />
-      <Portfolio data={resumeData.portfolio} />
-      <Testimonials data={resumeData.testimonials} />
-      <Contact data={resumeData.main} />
-      <Footer data={resumeData.main} />
-    </div>
+      <div className="App">
+        <Header data={resumeData.main} />
+        <About data={resumeData.main} />
+        <Resume data={resumeData.resume} />
+        <Portfolio data={resumeData.portfolio} />
+        <Testimonials data={resumeData.testimonials} />
+        <Contact data={resumeData.main} />
+        <Footer data={resumeData.main} />
+      </div>
   );
 }
