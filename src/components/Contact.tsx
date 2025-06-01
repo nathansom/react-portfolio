@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { FormEvent, MouseEvent, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
