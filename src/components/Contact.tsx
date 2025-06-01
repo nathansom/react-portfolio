@@ -82,7 +82,7 @@ export const Contact = ({ data }: any) => {
               name="contact"
               ref={formRef}
               onSubmit={onSubmit}
-              data-netlify={true}
+              data-netlify="true"
             >
               <fieldset>
                 <input type="hidden" name="form-name" value="contact" />
