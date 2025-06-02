@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/"
+to = "/__contact"
+status = 200
