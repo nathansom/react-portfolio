@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { FormEvent, useRef, useState } from "react";
-import { toast, ToastOptions } from "react-toastify";
+import { toast } from "react-toastify";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
@@ -18,7 +18,7 @@ export const Contact = ({ data }: any) => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      await fetch("/__contact", {
+      const res = await fetch("/__contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(
@@ -26,13 +26,19 @@ export const Contact = ({ data }: any) => {
         ).toString(),
       });
 
-      toast("Your message was sent successfully. Thank you!", {
-        type: "success",
-      } as ToastOptions);
-      setName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
+      if (res.redirected) {
+        toast("Your submission is not successful. Please try again.", {
+          type: "error",
+        });
+      } else if (res.ok) {
+        toast("Your message was sent successfully. Thank you!", {
+          type: "success",
+        });
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
     } catch (e: unknown) {
       const errorMsg =
         typeof e === "object" &&
