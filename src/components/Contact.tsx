@@ -82,6 +82,8 @@ export const Contact = ({ data }: any) => {
         setEmail("");
         setSubject("");
         setMessage("");
+
+        return;
       }
 
       const errorMsg =
