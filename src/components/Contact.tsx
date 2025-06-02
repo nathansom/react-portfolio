@@ -1,7 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
@@ -9,6 +10,48 @@ export const Contact = ({ data }: any) => {
     [subject, setSubject] = useState(""),
     [message, setMessage] = useState(""),
     contactMessage = data?.contactmessage || "";
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const res = await fetch("/__contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(
+          formData as unknown as Record<string, string>
+        ).toString(),
+      });
+
+      if (res.redirected) {
+        toast("Your submission is not successful. Please try again.", {
+          type: "error",
+        });
+      } else if (res.ok) {
+        toast("Your message was sent successfully. Thank you!", {
+          type: "success",
+        });
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    } catch (e: unknown) {
+      const errorMsg =
+        typeof e === "object" &&
+        e &&
+        "message" in e &&
+        typeof e.message === "string"
+          ? e.message
+          : typeof e === "object"
+          ? JSON.stringify(e)
+          : "Unknown error has occured";
+
+      toast(errorMsg, { type: "error" });
+    }
+  };
 
   return (
     <>
@@ -44,6 +87,7 @@ export const Contact = ({ data }: any) => {
             <form
               name="contact"
               method="POST"
+              onSubmit={onSubmit}
               data-netlify-recaptcha="true"
               data-netlify="true"
             >
