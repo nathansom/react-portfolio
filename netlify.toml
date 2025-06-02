@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/"
-  to = "/__contact"
+  from = "/__contact"
+  to = "/"
   status = 200
   force = true
