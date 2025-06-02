@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "../styles/main.css";
 import "../styles/page.css";
 import { IOContextProvider } from "../context/IOContextProvider";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Nathan Somsa-ard | Full-Stack Software Developer | React | .NET | Power Platform",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <IOContextProvider>
         <body>
           <div id="root">{children}</div>
+          <ToastContainer />
         </body>
       </IOContextProvider>
     </html>

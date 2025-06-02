@@ -2,14 +2,13 @@
 
 import Script from "next/script";
 import { FormEvent, useRef, useState } from "react";
+import { toast, ToastOptions } from "react-toastify";
 
 export const Contact = ({ data }: any) => {
   const [name, setName] = useState(""),
     [email, setEmail] = useState(""),
     [subject, setSubject] = useState(""),
     [message, setMessage] = useState(""),
-    [submissionErrorMsg, setSubmissionErrorMsg] = useState(""),
-    [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false),
     contactMessage = data?.contactmessage || "",
     formRef = useRef<HTMLFormElement>(null);
 
@@ -19,7 +18,7 @@ export const Contact = ({ data }: any) => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      await fetch("/", {
+      await fetch("/__contact.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(
@@ -27,7 +26,9 @@ export const Contact = ({ data }: any) => {
         ).toString(),
       });
 
-      setIsSubmissionSuccessful(true);
+      toast("Your message was sent successfully. Thank you!", {
+        type: "success",
+      } as ToastOptions);
       setName("");
       setEmail("");
       setSubject("");
@@ -43,7 +44,7 @@ export const Contact = ({ data }: any) => {
           ? JSON.stringify(e)
           : "Unknown error has occured";
 
-      setSubmissionErrorMsg(errorMsg);
+      toast(errorMsg, { type: "error" });
     }
   };
 
@@ -143,7 +144,6 @@ export const Contact = ({ data }: any) => {
                 </div>
 
                 <div data-netlify-recaptcha="true"></div>
-
                 <div>
                   <button type="submit" className="submit">
                     Submit
@@ -151,17 +151,6 @@ export const Contact = ({ data }: any) => {
                 </div>
               </fieldset>
             </form>
-
-            {submissionErrorMsg && (
-              <div id="message-warning">{`Your message is failed to send with the following error: ${submissionErrorMsg}`}</div>
-            )}
-            {isSubmissionSuccessful && (
-              <div id="message-success">
-                <i className="fa fa-check"></i>Your message was sent
-                successfully. Thank you!
-                <br />
-              </div>
-            )}
           </div>
         </div>
       </section>
