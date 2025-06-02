@@ -18,7 +18,7 @@ export const Contact = ({ data }: any) => {
     const formData = new FormData(e.currentTarget);
 
     try {
-      await fetch("/__contact.html", {
+      await fetch("/__contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(
