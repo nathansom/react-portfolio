@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 
 export const Contact = ({ data }: any) => {
@@ -9,8 +9,7 @@ export const Contact = ({ data }: any) => {
     [email, setEmail] = useState(""),
     [subject, setSubject] = useState(""),
     [message, setMessage] = useState(""),
-    contactMessage = data?.contactmessage || "",
-    formRef = useRef<HTMLFormElement>(null);
+    contactMessage = data?.contactmessage || "";
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -87,7 +86,7 @@ export const Contact = ({ data }: any) => {
           <div className="eight columns centered">
             <form
               name="contact"
-              ref={formRef}
+              method="POST"
               onSubmit={onSubmit}
               data-netlify-recaptcha="true"
               data-netlify="true"
