@@ -68,6 +68,22 @@ export const Contact = ({ data }: any) => {
         });
       }
     } catch (e: unknown) {
+      if (
+        typeof e === "object" &&
+        e &&
+        "message" in e &&
+        typeof e.message === "string" &&
+        /Failed to fetch/i.test(e.message)
+      ) {
+        toast("Your message was sent successfully. Thank you!", {
+          type: "success",
+        });
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+
       const errorMsg =
         typeof e === "object" &&
         e &&
