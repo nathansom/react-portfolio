@@ -14,22 +14,47 @@ export const Contact = ({ data }: any) => {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const timestamp = new Date().getTime(),
+      formData = new FormData(e.currentTarget),
+      formData2 = new FormData();
+
+    formData2.append("entry.541229769", name);
+    formData2.append("entry.591148020", email);
+    formData2.append("entry.2038241310", subject);
+    formData2.append("entry.895529978", message);
+    formData2.append("fvv", "1");
+    formData2.append("pageHistory", "0");
+    formData2.append("submissionTimestamp", timestamp.toString());
+
+    if (!process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT) {
+      toast(
+        "There's an unknown error with the submission. Please try again the next",
+        {
+          type: "error",
+        }
+      );
+      return;
+    }
 
     try {
-      const res = await fetch("/__contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(
-          formData as unknown as Record<string, string>
-        ).toString(),
-      });
+      const res = await Promise.all([
+        fetch("/__contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(
+            formData as unknown as Record<string, string>
+          ).toString(),
+        }),
+        fetch(process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(
+            formData2 as unknown as Record<string, string>
+          ).toString(),
+        }),
+      ]);
 
-      if (res.redirected) {
-        toast("Your submission is not successful. Please try again.", {
-          type: "error",
-        });
-      } else if (res.ok) {
+      if (res.some((r) => r.ok)) {
         toast("Your message was sent successfully. Thank you!", {
           type: "success",
         });
@@ -37,6 +62,10 @@ export const Contact = ({ data }: any) => {
         setEmail("");
         setSubject("");
         setMessage("");
+      } else {
+        toast("Your submission is not successful. Please try again.", {
+          type: "error",
+        });
       }
     } catch (e: unknown) {
       const errorMsg =
