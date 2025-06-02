@@ -2,3 +2,4 @@
   from = "/"
   to = "/__contact"
   status = 200
+  force = true
